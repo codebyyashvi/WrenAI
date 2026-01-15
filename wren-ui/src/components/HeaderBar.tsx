@@ -25,10 +25,19 @@ const StyledButton = styled(Button)<{ $isHighlight: boolean }>`
 `;
 
 const StyledHeader = styled(Header)`
-  height: 48px;
+  height: 88px;
   border-bottom: 1px solid var(--gray-5);
   background: var(--gray-10);
   padding: 10px 16px;
+`;
+const BrandText = styled.span`
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--gray-1);
+  letter-spacing: 0.3px;
+  line-height: 1;        
+  display: inline-block;  
+  vertical-align: middle;  
 `;
 
 export default function HeaderBar() {
@@ -43,8 +52,11 @@ export default function HeaderBar() {
         className="d-flex justify-space-between align-center"
         style={{ marginTop: -2 }}
       >
-        <Space size={[48, 0]}>
-          <LogoBar />
+        <Space size={[10, 0]}>
+          <Space size={2} align="center" style={{ display: 'flex', alignItems: 'center' }}>
+            <LogoBar />
+            <BrandText>Braj AI</BrandText>
+          </Space>
           {showNav && (
             <Space size={[16, 0]}>
               <StyledButton
